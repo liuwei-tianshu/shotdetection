@@ -26,7 +26,7 @@ double inline normalize_ts(int64_t ts, int64_t time_base)
     return double(ts) / time_base;
 }
 
-AVStreamConverter::AVStreamConverter(int src_format, int width, int height)
+AVStreamConverter::AVStreamConverter(AVPixelFormat src_format, int width, int height)
 {
     int flags = 2; // 2 was taken from an example, apparently the flag is ignored in swscale anyway
     sws_ = sws_getContext(width, height, src_format, width, height,
