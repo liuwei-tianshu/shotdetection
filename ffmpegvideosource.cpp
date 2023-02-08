@@ -30,7 +30,7 @@ AVStreamConverter::AVStreamConverter(int src_format, int width, int height)
 {
     int flags = 2; // 2 was taken from an example, apparently the flag is ignored in swscale anyway
     sws_ = sws_getContext(width, height, src_format, width, height,
-                      PIX_FMT_RGB24, flags, NULL, NULL, NULL);
+                      AV_PIX_FMT_RGB32, flags, NULL, NULL, NULL);
 }
 
 AVStreamConverter::~AVStreamConverter()
